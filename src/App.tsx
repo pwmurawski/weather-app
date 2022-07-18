@@ -10,19 +10,20 @@ import { markerIcon } from "./components/Map/MarkerIcon/MarkerIcon";
 import SearchBar from "./components/SearchBar/SearchBar";
 import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
 import fetchApi from "./helpers/fetchApi";
+import { IWeatherData } from "./interfaces/IWeatherData";
 
 export default function App() {
   const [positionMouseClick, setPositionMouseClick] = useState<LatLng>();
   const [searchValue, setSearchValue] = useState("");
-  const [weatherData, setWeatherData] = useState<any>(null);
+  const [weatherData, setWeatherData] = useState<IWeatherData>();
   const [flyTo, setFlyTo] = useState<LatLngExpression | null>(null);
 
   const getWeather = async () => {
-    const res = await fetchApi<any>(
+    const res = await fetchApi<IWeatherData>(
       `&q=${searchValue}&lat=${positionMouseClick?.lat}&lon=${positionMouseClick?.lng}`
     );
     if (res) {
-      if (!/4+[0-9]{2}/.test(res.cod)) {
+      if (!/4+[0-9]{2}/.test(res.cod.toString())) {
         setFlyTo([res.coord.lat, res.coord.lon]);
         setWeatherData(res);
       }
