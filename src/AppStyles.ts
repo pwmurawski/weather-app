@@ -7,28 +7,29 @@ export const SidePanel = styled.section`
   flex-direction: column;
   max-width: 400px;
   width: 100%;
+  max-height: 100%;
   height: fit-content;
   padding: 20px;
-  z-index: 401;
+  overflow-y: auto;
 `;
 
 export const GoToLocalisation = styled.button`
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 150px;
   border: 0;
-  padding: 0;
+  padding: 8px;
   background-color: rgb(207, 241, 254);
   margin-bottom: 20px;
   box-shadow: 0 1px 5px 0 gray;
   cursor: pointer;
+  z-index: 401;
 `;
 
 export const Img = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 100%;
+  height: 100%;
 `;

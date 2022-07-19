@@ -1,15 +1,16 @@
 import timeConverter from "../../helpers/timeConverter";
-import { ICurrentWeather } from "../../interfaces/IWeatherData";
-import { Container } from "./styles/WeatherInfoStyles";
+import { ICurrentWeather } from "../../interfaces/ICurrentWeather";
 
-interface ISidePanelProps {
+interface ICurrentWeatherInfoProps {
   currentWeather: ICurrentWeather | undefined;
 }
 
-export default function WeatherInfo({ currentWeather }: ISidePanelProps) {
+export default function CurrentWeatherInfo({
+  currentWeather,
+}: ICurrentWeatherInfoProps) {
   if (!currentWeather) return null;
   return (
-    <Container>
+    <>
       <h2>{currentWeather.name}</h2>
       <div>
         {currentWeather
@@ -25,6 +26,6 @@ export default function WeatherInfo({ currentWeather }: ISidePanelProps) {
       <div>
         {timeConverter(currentWeather.sys.sunset, currentWeather.timezone)}
       </div>
-    </Container>
+    </>
   );
 }

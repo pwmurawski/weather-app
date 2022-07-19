@@ -12,6 +12,7 @@ export const Container = styled.section`
   background-color: white;
   box-shadow: 0 1px 5px 0 gray;
   cursor: text;
+  z-index: 401;
 `;
 
 export const Input = styled.input`
