@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import L from "leaflet";
 import location from "../../../assets/location-pin.png";
-import home from "../../../assets/home.png";
+import home from "../../../assets/person.png";
 
 export const markerIcon = new L.Icon({
   iconUrl: location,
@@ -11,5 +11,5 @@ export const markerIcon = new L.Icon({
 
 export const homeIcon = new L.Icon({
   iconUrl: home,
-  iconSize: new L.Point(30, 30),
+  iconSize: new L.Point(45, 45),
 });

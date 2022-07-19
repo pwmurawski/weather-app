@@ -20,7 +20,7 @@ export default function GetLocalisation({
     locationfound(e) {
       setPosition(e.latlng);
       if (getPosition) getPosition(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
+      map.flyTo(e.latlng, 10);
     },
   });
 

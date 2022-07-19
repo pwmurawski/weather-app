@@ -1,20 +1,30 @@
-import { IWeatherData } from "../../interfaces/IWeatherData";
+import timeConverter from "../../helpers/timeConverter";
+import { ICurrentWeather } from "../../interfaces/IWeatherData";
 import { Container } from "./styles/WeatherInfoStyles";
 
 interface ISidePanelProps {
-  weatherData: IWeatherData | undefined;
+  currentWeather: ICurrentWeather | undefined;
 }
 
-export default function WeatherInfo({ weatherData }: ISidePanelProps) {
-  if (!weatherData) return null;
+export default function WeatherInfo({ currentWeather }: ISidePanelProps) {
+  if (!currentWeather) return null;
   return (
     <Container>
-      <h2>{weatherData.name}</h2>
+      <h2>{currentWeather.name}</h2>
       <div>
-        {weatherData ? `${Math.round(weatherData.main.temp)}°C` : undefined}
+        {currentWeather
+          ? `${Math.round(currentWeather.main.temp)}°C`
+          : undefined}
       </div>
-      <div>{weatherData.weather[0].description}</div>
-      <div>{weatherData.weather[0].icon}</div>
+      <div>{currentWeather.weather[0].description}</div>
+      <div>{currentWeather.weather[0].icon}</div>
+      <div>{timeConverter(currentWeather.dt, currentWeather.timezone)}</div>
+      <div>
+        {timeConverter(currentWeather.sys.sunrise, currentWeather.timezone)}
+      </div>
+      <div>
+        {timeConverter(currentWeather.sys.sunset, currentWeather.timezone)}
+      </div>
     </Container>
   );
 }
