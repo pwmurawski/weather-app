@@ -1,5 +1,5 @@
 /* eslint-disable no-empty */
-const fetchApi = async <T>(url: string, options?: RequestInit) => {
+const fetchOpenWeatherMap = async <T>(url: string, options?: RequestInit) => {
   try {
     const baseUrl = process.env.REACT_APP_API_URL;
     const appId = process.env.REACT_APP_API_APPID;
@@ -12,4 +12,4 @@ const fetchApi = async <T>(url: string, options?: RequestInit) => {
   return undefined;
 };
 
-export default fetchApi;
+export default fetchOpenWeatherMap;

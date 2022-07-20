@@ -13,6 +13,7 @@ export const Container = styled.section`
   box-shadow: 0 1px 5px 0 gray;
   cursor: text;
   z-index: 401;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 `;
 
 export const Input = styled.input`

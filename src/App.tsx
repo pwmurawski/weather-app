@@ -8,7 +8,7 @@ import Map from "./components/Map/Map";
 import MapFlyTo from "./components/Map/MapFlyTo";
 import { markerIcon } from "./components/Map/MarkerIcon/MarkerIcon";
 import SearchBar from "./components/SearchBar/SearchBar";
-import fetchApi from "./helpers/fetchApi";
+import fetchOpenWeatherMap from "./helpers/fetchOpenWeatherMap";
 import { ICurrentWeather } from "./interfaces/ICurrentWeather";
 import yourLocationIcon from "./assets/location.png";
 import { IForecastWeather } from "./interfaces/IForecastWeather";
@@ -17,6 +17,9 @@ import CurrentWeatherInfo from "./components/CurrentWeatherInfo/CurrentWeatherIn
 import ForecastWeatherInfo from "./components/ForecastWeatherInfo/ForecastWeatherInfo";
 import currentWeatherIcon from "./assets/weather-app.png";
 import forecastWeatherIcon from "./assets/weather-forecast.png";
+import photoIcon from "./assets/image.png";
+import { IPhotosData } from "./interfaces/IPhotosData";
+import Slider from "./components/Slider/Slider";
 
 export default function App() {
   const [positionLocalisation, setPositionLocalisation] = useState<LatLng>();
@@ -25,9 +28,10 @@ export default function App() {
   const [currentWeather, setCurrentWeather] = useState<ICurrentWeather>();
   const [forecastWeather, setForecastWeather] = useState<IForecastWeather>();
   const [flyTo, setFlyTo] = useState<LatLngExpression | null>(null);
+  const [photos, setPhotos] = useState<string[]>([]);
 
   const getCurrentWeather = async () => {
-    const res = await fetchApi<ICurrentWeather>(
+    const res = await fetchOpenWeatherMap<ICurrentWeather>(
       `weather?lang=pl&units=metric&q=${searchValue}&lat=${positionMouseClick?.lat}&lon=${positionMouseClick?.lng}`
     );
     if (res) {
@@ -39,7 +43,7 @@ export default function App() {
   };
 
   const getForecastWeather = async () => {
-    const res = await fetchApi<IForecastWeather>(
+    const res = await fetchOpenWeatherMap<IForecastWeather>(
       `forecast?lang=pl&units=metric&q=${searchValue}&lat=${positionMouseClick?.lat}&lon=${positionMouseClick?.lng}`
     );
     if (res) {
@@ -47,6 +51,15 @@ export default function App() {
         setForecastWeather(res);
       }
     }
+  };
+
+  const getPhoto = async () => {
+    const request = await fetch(
+      `https://api.pexels.com/v1/search?query=${currentWeather?.name.toLocaleLowerCase()}`
+    );
+    const res: IPhotosData = await request.json();
+    const photosData = res.photos.map(({ src }) => src.medium);
+    setPhotos(photosData);
   };
 
   useEffect(() => {
@@ -59,6 +72,10 @@ export default function App() {
   useEffect(() => {
     if (searchValue) setSearchValue("");
   }, [positionMouseClick]);
+
+  useEffect(() => {
+    getPhoto();
+  }, [currentWeather?.name]);
 
   return (
     <>
@@ -78,11 +95,14 @@ export default function App() {
             <Img src={yourLocationIcon} />
           </GoToLocalisation>
         ) : null}
-        <InfoBox isWeatherData={!!currentWeather} icon={currentWeatherIcon}>
+        <InfoBox isData={!!currentWeather} icon={currentWeatherIcon}>
           <CurrentWeatherInfo currentWeather={currentWeather} />
         </InfoBox>
-        <InfoBox isWeatherData={!!forecastWeather} icon={forecastWeatherIcon}>
+        <InfoBox isData={!!forecastWeather} icon={forecastWeatherIcon}>
           <ForecastWeatherInfo forecastWeather={forecastWeather} />
+        </InfoBox>
+        <InfoBox isData={!!photos.length} icon={photoIcon}>
+          <Slider imgArray={photos} />
         </InfoBox>
       </SidePanel>
       <Map position={[52.2312505202823, 21.00710032392898]} zoom={3}>

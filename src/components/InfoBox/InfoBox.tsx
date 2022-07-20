@@ -4,19 +4,15 @@ import MinimizeIcon from "../MinimizeIcon/MinimizeIcon";
 import minimizeIcon from "../../assets/minus-button.png";
 
 interface IInfoBoxProps {
-  isWeatherData: boolean;
+  isData: boolean;
   children: ReactElement;
   icon: string;
 }
 
-export default function InfoBox({
-  isWeatherData,
-  children,
-  icon,
-}: IInfoBoxProps) {
+export default function InfoBox({ isData, children, icon }: IInfoBoxProps) {
   const [minimize, setMinimize] = useState(false);
 
-  if (!isWeatherData) return null;
+  if (!isData) return null;
   return minimize ? (
     <MinimizeIcon icon={icon} setMinimize={setMinimize} />
   ) : (

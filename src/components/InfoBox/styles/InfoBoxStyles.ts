@@ -11,7 +11,7 @@ export const Container = styled.section`
   max-width: 400px;
   width: fit-content;
   height: fit-content;
-  padding: 10px 30px 30px;
+  padding: 10px;
   margin-bottom: 20px;
   background-color: white;
   border-radius: 8px;

@@ -5,7 +5,7 @@ export const SidePanel = styled.section`
   position: absolute;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 440px;
   width: 100%;
   max-height: 100%;
   height: fit-content;
