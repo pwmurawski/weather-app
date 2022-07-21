@@ -58,8 +58,10 @@ export default function App() {
       `https://api.pexels.com/v1/search?query=${currentWeather?.name.toLocaleLowerCase()}`
     );
     const res: IPhotosData = await request.json();
-    const photosData = res.photos.map(({ src }) => src.medium);
-    setPhotos(photosData);
+    if (!res.error) {
+      const photosData = res.photos.map(({ src }) => src.medium);
+      setPhotos(photosData);
+    }
   };
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export default function App() {
   }, [positionMouseClick]);
 
   useEffect(() => {
-    getPhoto();
+    if (currentWeather?.name) getPhoto();
   }, [currentWeather?.name]);
 
   return (

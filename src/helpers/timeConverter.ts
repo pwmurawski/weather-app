@@ -5,7 +5,7 @@ const addZero = (value: number) => {
 export const timeConverter = (
   unixTime: number,
   timeZone: number,
-  onlyHour?: boolean
+  options?: "time" | "date"
 ) => {
   const d = new Date(unixTime * 1000);
   d.setUTCSeconds(timeZone);
@@ -15,7 +15,8 @@ export const timeConverter = (
   const hours = addZero(d.getUTCHours());
   const minutes = addZero(d.getUTCMinutes());
 
-  if (onlyHour) return `${hours}:${minutes}`;
+  if (options === "time") return `${hours}:${minutes}`;
+  if (options === "date") return `${day}.${month}.${year}`;
   return `${day}.${month}.${year} ${hours}:${minutes}`;
 };
 

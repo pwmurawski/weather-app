@@ -75,7 +75,7 @@ export default function CurrentWeatherInfo({
                   {timeConverter(
                     currentWeather.sys.sunrise,
                     currentWeather.timezone,
-                    true
+                    "time"
                   )}
                 </SunriseSunset>
                 <SunriseSunset>
@@ -83,7 +83,7 @@ export default function CurrentWeatherInfo({
                   {timeConverter(
                     currentWeather.sys.sunset,
                     currentWeather.timezone,
-                    true
+                    "time"
                   )}
                 </SunriseSunset>
               </RowContainer>
