@@ -9,7 +9,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   max-width: 400px;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   padding: 10px;
   margin-bottom: 20px;

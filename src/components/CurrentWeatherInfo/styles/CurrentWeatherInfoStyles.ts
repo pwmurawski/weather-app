@@ -22,14 +22,6 @@ export const Description = styled.div`
   margin: 5px;
 `;
 
-export const Box = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 5px;
-`;
-
 export const Time = styled.div`
   position: absolute;
   top: -15px;
@@ -61,7 +53,7 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   border-radius: 5px;
   padding: 10px;
@@ -88,4 +80,17 @@ export const Label = styled.label`
   font-size: 9px;
   font-weight: bold;
   text-transform: uppercase;
+`;
+
+export const BoxContainer = styled(RowContainer)`
+  justify-content: space-evenly;
+  width: 100%;
+`;
+
+export const ColumnBoxContainer = styled(ColumnContainer)`
+  width: 100%;
+`;
+
+export const Box = styled(ColumnContainer)`
+  margin: 5px;
 `;

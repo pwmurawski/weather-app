@@ -9,6 +9,8 @@ import {
   ColumnContainer,
   Container,
   Date,
+  WindSpeed,
+  Label,
 } from "./styles/ForecastWeatherInfoStyles";
 
 interface IForecastWeatherInfoProps {
@@ -30,7 +32,13 @@ export default function ForecastWeatherInfo({
             {timeConverter(el.dt, forecastWeather.city.timezone, "time")}
           </Time>
           <RowContainer>
-            <CurrentTemp>{Math.round(el.main.temp)}°C</CurrentTemp>
+            <ColumnContainer>
+              <CurrentTemp>{Math.round(el.main.temp)}°C</CurrentTemp>
+              <WindSpeed>
+                <Label>wiatr</Label>
+                {Math.round(el.wind.speed)}km/h
+              </WindSpeed>
+            </ColumnContainer>
             <ColumnContainer>
               <Icon
                 src={`https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`}
