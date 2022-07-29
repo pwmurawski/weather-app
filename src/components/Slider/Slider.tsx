@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import useSlider from "../../hooks/useSlider";
 import { Container, Img, NextBtn, PrevBtn } from "./styles/SliderStyles";
 
 interface ISliderProps {
@@ -6,12 +6,7 @@ interface ISliderProps {
 }
 
 export default function Slider({ imgArray }: ISliderProps) {
-  const [currentImg, setCurrentImg] = useState(0);
-
-  useEffect(() => {
-    if (currentImg > imgArray.length - 1) setCurrentImg(0);
-    if (currentImg < 0) setCurrentImg(imgArray.length - 1);
-  }, [currentImg]);
+  const [currentImg, setImg] = useSlider(imgArray);
 
   if (imgArray.length === 1)
     return (
@@ -21,9 +16,9 @@ export default function Slider({ imgArray }: ISliderProps) {
     );
   return (
     <Container>
-      <PrevBtn onClick={() => setCurrentImg(currentImg - 1)}>{"<"}</PrevBtn>
+      <PrevBtn onClick={() => setImg(-1)}>{"<"}</PrevBtn>
       <Img src={imgArray[currentImg]} />
-      <NextBtn onClick={() => setCurrentImg(currentImg + 1)}>{">"}</NextBtn>
+      <NextBtn onClick={() => setImg(1)}>{">"}</NextBtn>
     </Container>
   );
 }
