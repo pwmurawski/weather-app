@@ -4,16 +4,16 @@ import yourLocationIcon from "../../assets/location.png";
 
 interface IGoToLocalisationBtnProps {
   positionLocalisation: LatLng | undefined;
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
   setPositionMouseClick: React.Dispatch<
     React.SetStateAction<LatLng | undefined>
   >;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export default function GoToLocalisationBtn({
   positionLocalisation,
-  setSearchValue,
   setPositionMouseClick,
+  setSearchValue,
 }: IGoToLocalisationBtnProps) {
   if (!positionLocalisation) return null;
   return (

@@ -55,7 +55,7 @@ export default function App() {
         />
         <GoToLocalisationBtn
           positionLocalisation={positionLocalisation}
-          setPositionMouseClick={setPositionLocalisation}
+          setPositionMouseClick={setPositionMouseClick}
           setSearchValue={setSearchValue}
         />
         <InfoBox isData={!!currentWeather} icon={currentWeatherIcon}>
