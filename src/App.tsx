@@ -35,7 +35,7 @@ export default function App() {
     positionMouseClick?.lat,
     positionMouseClick?.lng
   );
-  const [photos] = usePhotos(searchValue);
+  const [photos] = usePhotos(currentWeather?.name);
 
   useEffect(() => {
     if (currentWeather)

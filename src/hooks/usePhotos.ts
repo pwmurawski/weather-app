@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import getPhoto from "../helpers/getPhoto";
 
 const usePhotos = (
-  searchValue: string
+  searchValue?: string
 ): [
   photos: string[],
   setPhotos: React.Dispatch<React.SetStateAction<string[]>>,
@@ -12,12 +12,14 @@ const usePhotos = (
   const [isLoading, setIsLoading] = useState(true);
 
   const getData = async () => {
-    const res = await getPhoto(searchValue);
-    if (res) {
-      if (!res.error) {
-        const photosData = res.photos.map(({ src }) => src.medium);
-        setPhotos(photosData);
-        setIsLoading(false);
+    if (searchValue) {
+      const res = await getPhoto(searchValue);
+      if (res) {
+        if (!res.error) {
+          const photosData = res.photos.map(({ src }) => src.medium);
+          setPhotos(photosData);
+          setIsLoading(false);
+        }
       }
     }
   };
