@@ -17,8 +17,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
+![Product Name Screen Shot][product-screenshot]
+ <div align="center">
+    <img src="Lighthouse.png" alt="Lighthouse" />
+ </div>
+ 
+ <br/>
+ 
 Aplikacja pogodowa umożliwia użytkownikom wyświetlenie aktualnych informacji pogodowych dla wybranej lokalizacji.
 <br/>
 Proces ten rozpoczyna się od wskazania miejsca na mapie za pomocą interfejsu graficznego lub wpisania nazwy miejsca.
@@ -72,6 +77,7 @@ pwmurawski123@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: weather-app-pwmurawski.vercel.app.png
+[lighthouse]: Lighthouse.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [TypeScript.ts]: https://img.shields.io/badge/TypeScript-20232A?style=for-the-badge&logo=typescript&logoColor=3791d2
