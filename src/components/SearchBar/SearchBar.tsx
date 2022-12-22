@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { useRef } from "react";
+import { ChangeEventHandler, useRef } from "react";
 import { Container, Icon, Input } from "./styles/SearchBarStyles";
 import searchIcon from "../../assets/search.png";
 
 interface ISearchBarProps {
   value?: string | number | readonly string[];
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 const defaultProps = {

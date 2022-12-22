@@ -1,13 +1,12 @@
 import { LatLng } from "leaflet";
+import { Dispatch, SetStateAction } from "react";
 import { Container, Img } from "./styles/GoToLocalisationBtnStyles";
 import yourLocationIcon from "../../assets/location.png";
 
 interface IGoToLocalisationBtnProps {
   positionLocalisation: LatLng | undefined;
-  setPositionMouseClick: React.Dispatch<
-    React.SetStateAction<LatLng | undefined>
-  >;
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setPositionMouseClick: Dispatch<SetStateAction<LatLng | undefined>>;
+  setSearchValue: Dispatch<SetStateAction<string>>;
 }
 
 export default function GoToLocalisationBtn({

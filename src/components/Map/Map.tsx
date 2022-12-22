@@ -1,11 +1,11 @@
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { LeafletStyles } from "./styles/MapStyles";
 
 interface IMapProps {
-  children?: ReactElement;
+  children?: ReactNode;
   position: LatLngExpression;
   zoom: number;
 }
