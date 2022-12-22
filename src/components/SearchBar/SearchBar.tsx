@@ -24,7 +24,7 @@ export default function SearchBar({ value, onChange }: ISearchBarProps) {
         value={value}
         onChange={onChange}
       />
-      <Icon src={searchIcon} />
+      <Icon src={searchIcon} alt="Search" />
     </Container>
   );
 }

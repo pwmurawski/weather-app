@@ -23,7 +23,7 @@ export default function GoToLocalisationBtn({
       }}
       type="button"
     >
-      <Img src={yourLocationIcon} />
+      <Img src={yourLocationIcon} alt="Go to localisation" />
     </Container>
   );
 }

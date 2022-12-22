@@ -28,7 +28,7 @@ export default function MinimizeIcon({
       padding={padding}
       onClick={() => setMinimize((state) => !state)}
     >
-      <Icon src={icon} />
+      <Icon src={icon} alt="Minimize" />
     </Container>
   );
 }
