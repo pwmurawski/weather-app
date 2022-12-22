@@ -4,7 +4,7 @@ const apiOpenWeatherMap = async <T>(url: string, options?: RequestInit) => {
     const baseUrl = process.env.REACT_APP_API_URL;
     const appId = process.env.REACT_APP_API_APPID;
 
-    const request = await fetch(`${baseUrl}${url}${appId}`, options);
+    const request = await fetch(`${baseUrl}${url}&appid=${appId}`, options);
     const res: T = await request.json();
 
     return res;
