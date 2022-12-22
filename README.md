@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -31,8 +33,6 @@ Aplikacja umożliwia również wyświetlenie prognozy pogody na nadchodzące dni
 * [![TypeScript][TypeScript.ts]][TypeScript-url]
 * [![React-Leaflet][React-Leaflet.js]][React-Leaflet-url]
 * [![Styled-Components][Styled-Components]][Styled-Components-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
