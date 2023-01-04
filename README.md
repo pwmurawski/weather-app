@@ -38,6 +38,9 @@ Aplikacja umożliwia również wyświetlenie prognozy pogody na nadchodzące dni
 * [![TypeScript][TypeScript.ts]][TypeScript-url]
 * [![React-Leaflet][React-Leaflet.js]][React-Leaflet-url]
 * [![Styled-Components][Styled-Components]][Styled-Components-url]
+* [![Jest][Jest]][Jest-url]
+* [![Testing-Library][Testing-Library]][Testing-Library-url]
+* [![Cypress][Cypress]][Cypress-url]
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -85,3 +88,9 @@ pwmurawski123@gmail.com
 [React-Leaflet-url]: https://react-leaflet.js.org
 [Styled-Components]: https://img.shields.io/badge/Styled%20Components-20232A?style=for-the-badge&logo=Styled%20Components&logoColor=e9cd16
 [Styled-Components-url]: https://styled-components.com
+[Jest]: https://img.shields.io/badge/Jest-20232A?style=for-the-badge&logo=Jest&logoColor=7a0530
+[Jest-url]: https://jestjs.io
+[Testing-Library]: https://img.shields.io/badge/Testing%20Library-20232A?style=for-the-badge&logo=Testing%20Library&logoColor=e86868
+[Testing-Library-url]: https://testing-library.com
+[Cypress]: https://img.shields.io/badge/Cypress-20232A?style=for-the-badge&logo=Cypress&logoColor=666666
+[Cypress-url]: https://www.cypress.io
