@@ -28,9 +28,9 @@ export interface ICurrentWeather {
   };
   dt: number;
   sys: {
-    type: number;
-    id: number;
-    message: number;
+    type?: number;
+    id?: number;
+    message?: number;
     country: string;
     sunrise: number;
     sunset: number;

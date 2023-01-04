@@ -10,13 +10,9 @@ const useWeather = <DataType extends { cod: string | number }>(
   searchValue: string,
   lat: number | undefined,
   lng: number | undefined
-): [
-  weather: typeof weather,
-  setWeather: typeof setWeather,
-  isLoading: boolean
-] => {
+): [weather: typeof weather, isLoading: boolean] => {
   const [weather, setWeather] = useState<DataType>();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getData = async () => {
     setIsLoading(true);
@@ -37,7 +33,7 @@ const useWeather = <DataType extends { cod: string | number }>(
     }
   }, [lat, lng, searchValue]);
 
-  return [weather, setWeather, isLoading];
+  return [weather, isLoading];
 };
 
 export default useWeather;

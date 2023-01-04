@@ -17,13 +17,14 @@ export default function GoToLocalisationBtn({
   if (!positionLocalisation) return null;
   return (
     <Container
+      data-testid="containerGoToLocalisationBtn"
       onClick={() => {
         setSearchValue("");
         setPositionMouseClick(positionLocalisation);
       }}
       type="button"
     >
-      <Img src={yourLocationIcon} alt="Go to localisation" />
+      <Img data-testid="img" src={yourLocationIcon} alt="Go to localisation" />
     </Container>
   );
 }

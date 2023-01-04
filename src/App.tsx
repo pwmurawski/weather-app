@@ -10,13 +10,13 @@ import { markerIcon } from "./components/Map/MarkerIcon/MarkerIcon";
 import SearchBar from "./components/SearchBar/SearchBar";
 import InfoBox from "./components/InfoBox/InfoBox";
 import CurrentWeatherInfo from "./components/CurrentWeatherInfo/CurrentWeatherInfo";
-import ForecastWeatherInfo from "./components/ForecastWeatherInfo/ForecastWeatherInfo";
 import currentWeatherIcon from "./assets/weather-app.png";
 import forecastWeatherIcon from "./assets/weather-forecast.png";
 import GoToLocalisationBtn from "./components/GoToLocalisationBtn/GoToLocalisationBtn";
 import useWeather from "./hooks/useWeather";
 import getForecastWeather from "./helpers/getForecastWeather";
 import getCurrentWeather from "./helpers/getCurrentWeather";
+import ForecastWeatherInfoMap from "./components/ForecastWeatherInfo/ForecastWeatherInfoMap/ForecastWeatherInfoMap";
 
 export default function App() {
   const [positionLocalisation, setPositionLocalisation] = useState<LatLng>();
@@ -61,7 +61,7 @@ export default function App() {
           <CurrentWeatherInfo currentWeather={currentWeather} />
         </InfoBox>
         <InfoBox isData={!!forecastWeather} icon={forecastWeatherIcon}>
-          <ForecastWeatherInfo forecastWeather={forecastWeather} />
+          <ForecastWeatherInfoMap forecastWeatherData={forecastWeather} />
         </InfoBox>
       </SidePanel>
       <Map position={[52.2312505202823, 21.00710032392898]} zoom={3}>

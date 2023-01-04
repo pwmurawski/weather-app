@@ -1,4 +1,4 @@
-import { IForecastWeather } from "../interfaces/IForecastWeather";
+import { IForecastWeather } from "../interfaces/ForecastWeatherType";
 import apiOpenWeatherMap from "./api/apiOpenWeatherMap";
 
 const getForecastWeather = async (

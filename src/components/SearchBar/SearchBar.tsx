@@ -17,14 +17,18 @@ export default function SearchBar({ value, onChange }: ISearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <Container onClick={() => inputRef.current?.focus()}>
+    <Container
+      data-testid="containerSearchBar"
+      onClick={() => inputRef.current?.focus()}
+    >
       <Input
+        data-testid="input"
         ref={inputRef}
         placeholder="Wyszukaj"
         value={value}
         onChange={onChange}
       />
-      <Icon src={searchIcon} alt="Search" />
+      <Icon data-testid="icon" src={searchIcon} alt="Search" />
     </Container>
   );
 }

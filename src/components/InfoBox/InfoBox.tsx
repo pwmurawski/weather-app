@@ -16,8 +16,8 @@ export default function InfoBox({ isData, children, icon }: IInfoBoxProps) {
   return minimize ? (
     <MinimizeIcon icon={icon} setMinimize={setMinimize} />
   ) : (
-    <Container>
-      <PositionContainer>
+    <Container data-testid="containerInfoBox">
+      <PositionContainer data-testid="positionContainer">
         <MinimizeIcon
           width="25px"
           height="25px"

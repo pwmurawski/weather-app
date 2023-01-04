@@ -1,5 +1,8 @@
-import timeConverter from "../../helpers/timeConverter";
-import { IForecastWeather } from "../../interfaces/IForecastWeather";
+import dateTimeConverter from "../../helpers/dateTimeConverter";
+import {
+  IForecastWeatherCity,
+  IForecastWeatherList,
+} from "../../interfaces/ForecastWeatherType";
 import {
   RowContainer,
   CurrentTemp,
@@ -14,40 +17,42 @@ import {
 } from "./styles/ForecastWeatherInfoStyles";
 
 interface IForecastWeatherInfoProps {
-  forecastWeather: IForecastWeather | undefined;
+  forecastWeather: IForecastWeatherList;
+  city: IForecastWeatherCity;
 }
 
 export default function ForecastWeatherInfo({
   forecastWeather,
+  city,
 }: IForecastWeatherInfoProps) {
-  if (!forecastWeather) return null;
   return (
-    <>
-      {forecastWeather.list.map((el) => (
-        <Container key={el.dt}>
-          <Date>
-            {timeConverter(el.dt, forecastWeather.city.timezone, "date")}
-          </Date>
-          <Time>
-            {timeConverter(el.dt, forecastWeather.city.timezone, "time")}
-          </Time>
-          <RowContainer>
-            <ColumnContainer>
-              <CurrentTemp>{Math.round(el.main.temp)}°C</CurrentTemp>
-              <WindSpeed>
-                <Label>wiatr</Label>
-                {Math.round(el.wind.speed)}km/h
-              </WindSpeed>
-            </ColumnContainer>
-            <ColumnContainer>
-              <Icon
-                src={`https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`}
-              />
-              <Description>{el.weather[0].description}</Description>
-            </ColumnContainer>
-          </RowContainer>
-        </Container>
-      ))}
-    </>
+    <Container data-testid="containerForecastWeatherInfo">
+      <Date data-testid="date">
+        {dateTimeConverter(forecastWeather.dt, city.timezone, "date")}
+      </Date>
+      <Time data-testid="time">
+        {dateTimeConverter(forecastWeather.dt, city.timezone, "time")}
+      </Time>
+      <RowContainer data-testid="rowContainer">
+        <ColumnContainer data-testid="columnContainer">
+          <CurrentTemp data-testid="currentTemp">
+            {Math.round(forecastWeather.main.temp)}°C
+          </CurrentTemp>
+          <WindSpeed data-testid="windSpeed">
+            <Label data-testid="label">wiatr</Label>
+            {Math.round(forecastWeather.wind.speed)}km/h
+          </WindSpeed>
+        </ColumnContainer>
+        <ColumnContainer data-testid="columnContainer">
+          <Icon
+            data-testid="icon"
+            src={`https://openweathermap.org/img/wn/${forecastWeather.weather[0].icon}@2x.png`}
+          />
+          <Description data-testid="description">
+            {forecastWeather.weather[0].description}
+          </Description>
+        </ColumnContainer>
+      </RowContainer>
+    </Container>
   );
 }

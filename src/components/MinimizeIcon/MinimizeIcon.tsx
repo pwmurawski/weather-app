@@ -23,12 +23,13 @@ export default function MinimizeIcon({
 }: IMinimizeIconProps) {
   return (
     <Container
+      data-testid="containerMinimizeIcon"
       width={width}
       height={height}
       padding={padding}
       onClick={() => setMinimize((state) => !state)}
     >
-      <Icon src={icon} alt="Minimize" />
+      <Icon data-testid="icon" src={icon} alt="Minimize" />
     </Container>
   );
 }
