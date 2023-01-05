@@ -1,8 +1,8 @@
 import dateTimeConverter from "../../helpers/dateTimeConverter";
 import {
-  IForecastWeatherCity,
-  IForecastWeatherList,
-} from "../../interfaces/ForecastWeatherType";
+  ForecastWeatherCityType,
+  ForecastWeatherListType,
+} from "../../types/ForecastWeatherTypes";
 import {
   RowContainer,
   CurrentTemp,
@@ -17,14 +17,19 @@ import {
 } from "./styles/ForecastWeatherInfoStyles";
 
 interface IForecastWeatherInfoProps {
-  forecastWeather: IForecastWeatherList;
-  city: IForecastWeatherCity;
+  forecastWeather: ForecastWeatherListType;
+  city?: ForecastWeatherCityType;
 }
+
+const defaultProps = {
+  city: undefined,
+};
 
 export default function ForecastWeatherInfo({
   forecastWeather,
   city,
 }: IForecastWeatherInfoProps) {
+  if (!city) return null;
   return (
     <Container data-testid="containerForecastWeatherInfo">
       <Date data-testid="date">
@@ -56,3 +61,5 @@ export default function ForecastWeatherInfo({
     </Container>
   );
 }
+
+ForecastWeatherInfo.defaultProps = defaultProps;

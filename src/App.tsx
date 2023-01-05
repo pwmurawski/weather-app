@@ -37,7 +37,7 @@ export default function App() {
   );
 
   useEffect(() => {
-    if (currentWeather)
+    if (currentWeather?.coord)
       setFlyTo([currentWeather.coord.lat, currentWeather.coord.lon]);
   }, [currentWeather?.coord]);
 
@@ -72,7 +72,7 @@ export default function App() {
           mouseClickPosition={(position) => setPositionMouseClick(position)}
         />
         {flyTo ? <MapFlyTo position={flyTo} /> : null}
-        {currentWeather ? (
+        {currentWeather?.coord ? (
           <Marker
             position={[currentWeather.coord.lat, currentWeather.coord.lon]}
             icon={markerIcon}

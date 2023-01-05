@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const CityName = styled.h2`
   align-self: flex-start;
   margin: 15px 0;
+  min-height: 10px;
 `;
 
 export const Icon = styled.img`

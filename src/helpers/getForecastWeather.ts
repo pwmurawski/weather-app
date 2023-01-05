@@ -1,4 +1,4 @@
-import { IForecastWeather } from "../interfaces/ForecastWeatherType";
+import { ForecastWeatherSchema } from "../types/ForecastWeatherTypes";
 import apiOpenWeatherMap from "./api/apiOpenWeatherMap";
 
 const getForecastWeather = async (
@@ -6,10 +6,10 @@ const getForecastWeather = async (
   lat: number | undefined,
   lng: number | undefined
 ) => {
-  const res = await apiOpenWeatherMap<IForecastWeather>(
+  const res = await apiOpenWeatherMap(
     `forecast?lang=pl&units=metric&q=${searchValue}&lat=${lat}&lon=${lng}`
   );
-  return res;
+  return ForecastWeatherSchema.parse(res);
 };
 
 export default getForecastWeather;
