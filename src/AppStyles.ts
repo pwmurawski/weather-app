@@ -11,4 +11,8 @@ export const SidePanel = styled.section`
   height: fit-content;
   padding: 20px;
   overflow-y: auto;
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 `;

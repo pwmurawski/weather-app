@@ -18,7 +18,7 @@ describe("SearchBar component", () => {
       display: "flex",
       alignItems: "center",
       width: "100%",
-      height: "50px",
+      minHeight: "50px",
       padding: "10px 15px",
       marginBottom: "20px",
       borderRadius: "8px",

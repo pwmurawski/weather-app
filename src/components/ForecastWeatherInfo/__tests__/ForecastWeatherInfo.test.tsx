@@ -139,7 +139,6 @@ describe("ForecastWeatherInfo component", () => {
 
     expect(time).toHaveStyle({
       fontSize: "14px",
-      margin: "5px",
     });
   });
 
@@ -160,8 +159,9 @@ describe("ForecastWeatherInfo component", () => {
 
     expect(rowContainer).toHaveStyle({
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "space-around",
       alignItems: "center",
+      width: "100%",
     });
   });
 

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from "styled-components";
 
 export const Container = styled.section`
@@ -8,9 +7,6 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
-  width: 100%;
-  height: fit-content;
   padding: 10px;
   margin-bottom: 20px;
   background-color: white;
