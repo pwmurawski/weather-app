@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from "@testing-library/react";
-import useWeather from "../useWeather";
+import { useWeather } from "../useWeather";
 
 const data = { cod: 200 };
 

@@ -19,7 +19,7 @@
 
 ![Product Screen Shot][product-screenshot]
  <div align="center">
-    <img src="README_IMG/Lighthouse.png" alt="Lighthouse" />
+    <img src=".github/Lighthouse.png" alt="Lighthouse" />
  </div>
  
  <br/>
@@ -79,7 +79,7 @@ pwmurawski123@gmail.com
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: README_IMG/weather-app-pwmurawski.vercel.app.png
+[product-screenshot]: .github/weather-app-pwmurawski.vercel.app.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [TypeScript.ts]: https://img.shields.io/badge/TypeScript-20232A?style=for-the-badge&logo=typescript&logoColor=3791d2

@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import dateTimeConverter from "../../../helpers/dateTimeConverter";
-import CurrentWeatherInfo from "../CurrentWeatherInfo";
+import { dateTimeConverter } from "../../../helpers/dateTimeConverter";
+import { CurrentWeatherInfo } from "../CurrentWeatherInfo";
 
 const currentWeather = {
   coord: {

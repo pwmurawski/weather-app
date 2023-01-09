@@ -1,4 +1,4 @@
-import dateTimeConverter from "../dateTimeConverter";
+import { dateTimeConverter } from "../dateTimeConverter";
 
 const unixTime = 1640995260;
 const timeZone = 3600;

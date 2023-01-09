@@ -1,11 +1,11 @@
 import { ForecastWeatherType } from "../../../types/ForecastWeatherTypes";
-import ForecastWeatherInfo from "../ForecastWeatherInfo";
+import { ForecastWeatherInfo } from "../ForecastWeatherInfo";
 
 interface IForecastWeatherInfoProps {
   forecastWeatherData: ForecastWeatherType | undefined;
 }
 
-export default function ForecastWeatherInfoMap({
+export function ForecastWeatherInfoMap({
   forecastWeatherData,
 }: IForecastWeatherInfoProps) {
   if (!forecastWeatherData?.list) return null;

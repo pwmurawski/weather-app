@@ -6,7 +6,7 @@ interface IUseMapProps {
   position: LatLngExpression;
 }
 
-export default function MapFlyTo({ position }: IUseMapProps) {
+export function MapFlyTo({ position }: IUseMapProps) {
   const map = useMap();
   map.flyTo(position, 10);
 

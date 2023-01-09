@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 
-const useWeather = <DataType extends { cod: string | number }>(
+export const useWeather = <DataType extends { cod: string | number }>(
   fetcher: (
     searchValue: string,
     lat: number | undefined,
@@ -35,5 +35,3 @@ const useWeather = <DataType extends { cod: string | number }>(
 
   return [weather, isLoading];
 };
-
-export default useWeather;

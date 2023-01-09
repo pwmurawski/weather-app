@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import InfoBox from "../InfoBox";
+import { InfoBox } from "../InfoBox";
 import icon from "../../../assets/weather-app.png";
 
 describe("InfoBox component", () => {

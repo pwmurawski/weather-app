@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import MinimizeIcon from "../MinimizeIcon";
+import { MinimizeIcon } from "../MinimizeIcon";
 import minimizeIcon from "../../../assets/minus-button.png";
 
 const setMinimize = jest.fn();

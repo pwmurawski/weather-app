@@ -5,16 +5,12 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import { LeafletStyles } from "./styles/MapStyles";
 
 interface IMapProps {
-  children?: ReactNode;
+  children: ReactNode;
   position: LatLngExpression;
   zoom: number;
 }
 
-const defaultProps = {
-  children: undefined,
-};
-
-export default function Map({ position, zoom, children }: IMapProps) {
+export function Map({ position, zoom, children }: IMapProps) {
   return (
     <>
       <LeafletStyles />
@@ -28,5 +24,3 @@ export default function Map({ position, zoom, children }: IMapProps) {
     </>
   );
 }
-
-Map.defaultProps = defaultProps;

@@ -2,23 +2,23 @@ import { LatLng, LatLngExpression } from "leaflet";
 import { useEffect, useState } from "react";
 import { Marker, Popup } from "react-leaflet";
 import { SidePanel } from "./AppStyles";
-import GetLocalisation from "./components/Map/GetLocalisation";
-import GetMouseClickPosition from "./components/Map/GetMouseClickPosition";
-import Map from "./components/Map/Map";
-import MapFlyTo from "./components/Map/MapFlyTo";
-import { markerIcon } from "./components/Map/MarkerIcon/MarkerIcon";
-import SearchBar from "./components/SearchBar/SearchBar";
-import InfoBox from "./components/InfoBox/InfoBox";
-import CurrentWeatherInfo from "./components/CurrentWeatherInfo/CurrentWeatherInfo";
+import { GetLocalisation } from "./components/Map/GetLocalisation";
+import { GetMouseClickPosition } from "./components/Map/GetMouseClickPosition";
+import { Map } from "./components/Map/Map";
+import { MapFlyTo } from "./components/Map/MapFlyTo";
+import { markerIcon } from "./components/Map/MapMarkers/MapMarkers";
+import { SearchBar } from "./components/SearchBar/SearchBar";
+import { InfoBox } from "./components/InfoBox/InfoBox";
+import { CurrentWeatherInfo } from "./components/CurrentWeatherInfo/CurrentWeatherInfo";
 import currentWeatherIcon from "./assets/weather-app.png";
 import forecastWeatherIcon from "./assets/weather-forecast.png";
-import GoToLocalisationBtn from "./components/GoToLocalisationBtn/GoToLocalisationBtn";
-import useWeather from "./hooks/useWeather";
-import getForecastWeather from "./helpers/getForecastWeather";
-import getCurrentWeather from "./helpers/getCurrentWeather";
-import ForecastWeatherInfoMap from "./components/ForecastWeatherInfo/ForecastWeatherInfoMap/ForecastWeatherInfoMap";
+import { GoToLocalisationBtn } from "./components/GoToLocalisationBtn/GoToLocalisationBtn";
+import { useWeather } from "./hooks/useWeather";
+import { getForecastWeather } from "./helpers/getForecastWeather";
+import { getCurrentWeather } from "./helpers/getCurrentWeather";
+import { ForecastWeatherInfoMap } from "./components/ForecastWeatherInfo/ForecastWeatherInfoMap/ForecastWeatherInfoMap";
 
-export default function App() {
+export function App() {
   const [positionLocalisation, setPositionLocalisation] = useState<LatLng>();
   const [positionMouseClick, setPositionMouseClick] = useState<LatLng>();
   const [flyTo, setFlyTo] = useState<LatLngExpression | null>(null);

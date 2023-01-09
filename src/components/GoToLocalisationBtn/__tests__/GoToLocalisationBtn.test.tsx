@@ -1,6 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
 import { LatLng } from "leaflet";
-import GoToLocalisationBtn from "../GoToLocalisationBtn";
+import { GoToLocalisationBtn } from "../GoToLocalisationBtn";
 
 const position = {
   lat: 52.9209314,

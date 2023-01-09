@@ -6,12 +6,12 @@ interface IGetMouseClickPositionProps {
   mouseClickPosition: (position: LatLng) => void;
 }
 
-export default function GetMouseClickPosition({
+export function GetMouseClickPosition({
   mouseClickPosition,
 }: IGetMouseClickPositionProps) {
   useMapEvents({
-    click(e) {
-      mouseClickPosition(e.latlng);
+    click(mouseEvent) {
+      mouseClickPosition(mouseEvent.latlng);
     },
   });
 

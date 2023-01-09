@@ -9,7 +9,7 @@ interface IGoToLocalisationBtnProps {
   setSearchValue: Dispatch<SetStateAction<string>>;
 }
 
-export default function GoToLocalisationBtn({
+export function GoToLocalisationBtn({
   positionLocalisation,
   setPositionMouseClick,
   setSearchValue,

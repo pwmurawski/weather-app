@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Container, PositionContainer } from "./styles/InfoBoxStyles";
-import MinimizeIcon from "../MinimizeIcon/MinimizeIcon";
+import { MinimizeIcon } from "../MinimizeIcon/MinimizeIcon";
 import minimizeIcon from "../../assets/minus-button.png";
 
 interface IInfoBoxProps {
@@ -9,7 +9,7 @@ interface IInfoBoxProps {
   icon: string;
 }
 
-export default function InfoBox({ isData, children, icon }: IInfoBoxProps) {
+export function InfoBox({ isData, children, icon }: IInfoBoxProps) {
   const [minimize, setMinimize] = useState(false);
 
   if (!isData) return null;

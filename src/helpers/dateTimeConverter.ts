@@ -19,5 +19,3 @@ export const dateTimeConverter = (
   if (options === "date") return `${day}.${month}.${year}`;
   return `${day}.${month}.${year} ${hours}:${minutes}`;
 };
-
-export default dateTimeConverter;

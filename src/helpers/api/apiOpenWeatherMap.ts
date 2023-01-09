@@ -1,5 +1,5 @@
 /* eslint-disable no-empty */
-const apiOpenWeatherMap = async (url: string, options?: RequestInit) => {
+export const apiOpenWeatherMap = async (url: string, options?: RequestInit) => {
   try {
     const baseUrl = process.env.REACT_APP_API_URL;
     const appId = process.env.REACT_APP_API_APPID;
@@ -11,5 +11,3 @@ const apiOpenWeatherMap = async (url: string, options?: RequestInit) => {
   } catch {}
   return undefined;
 };
-
-export default apiOpenWeatherMap;

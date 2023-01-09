@@ -4,16 +4,11 @@ import { Container, Icon, Input } from "./styles/SearchBarStyles";
 import searchIcon from "../../assets/search.png";
 
 interface ISearchBarProps {
-  value?: string | number | readonly string[];
+  value?: string | number;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
-const defaultProps = {
-  value: undefined,
-  onChange: undefined,
-};
-
-export default function SearchBar({ value, onChange }: ISearchBarProps) {
+export function SearchBar({ value, onChange }: ISearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
@@ -32,5 +27,3 @@ export default function SearchBar({ value, onChange }: ISearchBarProps) {
     </Container>
   );
 }
-
-SearchBar.defaultProps = defaultProps;

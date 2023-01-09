@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import dateTimeConverter from "../../../helpers/dateTimeConverter";
-import ForecastWeatherInfo from "../ForecastWeatherInfo";
+import { dateTimeConverter } from "../../../helpers/dateTimeConverter";
+import { ForecastWeatherInfo } from "../ForecastWeatherInfo";
 
 const forecastWeather = {
   dt: 1672509600,

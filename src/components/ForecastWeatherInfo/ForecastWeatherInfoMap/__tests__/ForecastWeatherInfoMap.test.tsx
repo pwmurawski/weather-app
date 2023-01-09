@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import ForecastWeatherInfoMap from "../ForecastWeatherInfoMap";
+import { ForecastWeatherInfoMap } from "../ForecastWeatherInfoMap";
 
 const forecastWeatherData = {
   cod: "200",

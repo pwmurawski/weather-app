@@ -1,7 +1,7 @@
 import { ForecastWeatherSchema } from "../types/ForecastWeatherTypes";
-import apiOpenWeatherMap from "./api/apiOpenWeatherMap";
+import { apiOpenWeatherMap } from "./api/apiOpenWeatherMap";
 
-const getForecastWeather = async (
+export const getForecastWeather = async (
   searchValue: string,
   lat: number | undefined,
   lng: number | undefined
@@ -11,5 +11,3 @@ const getForecastWeather = async (
   );
   return ForecastWeatherSchema.parse(res);
 };
-
-export default getForecastWeather;

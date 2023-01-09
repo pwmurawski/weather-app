@@ -8,13 +8,7 @@ interface IMinimizeIconProps {
   padding?: string;
 }
 
-const defaultProps = {
-  width: undefined,
-  height: undefined,
-  padding: undefined,
-};
-
-export default function MinimizeIcon({
+export function MinimizeIcon({
   icon,
   setMinimize,
   width,
@@ -33,5 +27,3 @@ export default function MinimizeIcon({
     </Container>
   );
 }
-
-MinimizeIcon.defaultProps = defaultProps;

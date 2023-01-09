@@ -1,7 +1,7 @@
 import { CurrentWeatherSchema } from "../types/CurrentWeatherTypes";
-import apiOpenWeatherMap from "./api/apiOpenWeatherMap";
+import { apiOpenWeatherMap } from "./api/apiOpenWeatherMap";
 
-const getCurrentWeather = async (
+export const getCurrentWeather = async (
   searchValue: string,
   lat: number | undefined,
   lng: number | undefined
@@ -11,5 +11,3 @@ const getCurrentWeather = async (
   );
   return CurrentWeatherSchema.parse(res);
 };
-
-export default getCurrentWeather;

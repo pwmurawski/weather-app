@@ -1,4 +1,4 @@
-import dateTimeConverter from "../../helpers/dateTimeConverter";
+import { dateTimeConverter } from "../../helpers/dateTimeConverter";
 import {
   ForecastWeatherCityType,
   ForecastWeatherListType,
@@ -21,11 +21,7 @@ interface IForecastWeatherInfoProps {
   city?: ForecastWeatherCityType;
 }
 
-const defaultProps = {
-  city: undefined,
-};
-
-export default function ForecastWeatherInfo({
+export function ForecastWeatherInfo({
   forecastWeather,
   city,
 }: IForecastWeatherInfoProps) {
@@ -52,6 +48,7 @@ export default function ForecastWeatherInfo({
           <Icon
             data-testid="icon"
             src={`https://openweathermap.org/img/wn/${forecastWeather.weather[0].icon}@2x.png`}
+            alt="weather"
           />
           <Description data-testid="description">
             {forecastWeather.weather[0].description}
@@ -61,5 +58,3 @@ export default function ForecastWeatherInfo({
     </Container>
   );
 }
-
-ForecastWeatherInfo.defaultProps = defaultProps;
