@@ -31,10 +31,10 @@ export function ForecastWeatherInfo({
       <Date data-testid="date">
         {dateTimeConverter(forecastWeather.dt, city.timezone, "date")}
       </Date>
-      <Time data-testid="time">
-        {dateTimeConverter(forecastWeather.dt, city.timezone, "time")}
-      </Time>
       <RowContainer data-testid="rowContainer">
+        <Time data-testid="time">
+          {dateTimeConverter(forecastWeather.dt, city.timezone, "time")}
+        </Time>
         <ColumnContainer data-testid="columnContainer">
           <CurrentTemp data-testid="currentTemp">
             {Math.round(forecastWeather.main.temp)}°C

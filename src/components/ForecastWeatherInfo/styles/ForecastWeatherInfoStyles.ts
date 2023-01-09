@@ -23,8 +23,9 @@ export const ColumnContainer = styled.div`
 
 export const RowContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
 `;
 
 export const Icon = styled.img`
@@ -43,7 +44,6 @@ export const Description = styled.div`
 
 export const Time = styled.div`
   font-size: 14px;
-  margin: 5px;
 `;
 
 export const Date = styled.div`
