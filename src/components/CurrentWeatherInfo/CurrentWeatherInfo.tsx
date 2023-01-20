@@ -30,8 +30,6 @@ export function CurrentWeatherInfo({
 }: ICurrentWeatherInfoProps) {
   if (
     !(
-      currentWeather?.dt &&
-      currentWeather?.timezone &&
       currentWeather?.weather &&
       currentWeather?.main &&
       currentWeather?.wind &&
@@ -43,9 +41,12 @@ export function CurrentWeatherInfo({
     <>
       <CityName data-testid="cityName">{currentWeather.name}</CityName>
       <Container data-testid="container">
-        <Time data-testid="time">
-          {dateTimeConverter(currentWeather.dt, currentWeather.timezone)}
-        </Time>
+        {currentWeather.timezone !== undefined &&
+        currentWeather.dt !== undefined ? (
+          <Time data-testid="time">
+            {dateTimeConverter(currentWeather.dt, currentWeather.timezone)}
+          </Time>
+        ) : null}
         <ColumnContainer data-testid="columnContainer">
           <Icon
             data-testid="icon"
@@ -88,29 +89,36 @@ export function CurrentWeatherInfo({
                 />
               </Box>
             </BoxContainer>
-            <BoxContainer data-testid="boxContainer">
-              <SunriseSunset data-testid="sunriseSunset">
-                <Img
-                  data-testid="img"
-                  width="30px"
-                  src={sunrise}
-                  alt="sunrise"
-                />
-                {dateTimeConverter(
-                  currentWeather.sys.sunrise,
-                  currentWeather.timezone,
-                  "time"
-                )}
-              </SunriseSunset>
-              <SunriseSunset data-testid="sunriseSunset">
-                <Img data-testid="img" width="30px" src={sunset} alt="sunset" />
-                {dateTimeConverter(
-                  currentWeather.sys.sunset,
-                  currentWeather.timezone,
-                  "time"
-                )}
-              </SunriseSunset>
-            </BoxContainer>
+            {currentWeather.timezone !== undefined ? (
+              <BoxContainer data-testid="boxContainer">
+                <SunriseSunset data-testid="sunriseSunset">
+                  <Img
+                    data-testid="img"
+                    width="30px"
+                    src={sunrise}
+                    alt="sunrise"
+                  />
+                  {dateTimeConverter(
+                    currentWeather.sys.sunrise,
+                    currentWeather.timezone,
+                    "time"
+                  )}
+                </SunriseSunset>
+                <SunriseSunset data-testid="sunriseSunset">
+                  <Img
+                    data-testid="img"
+                    width="30px"
+                    src={sunset}
+                    alt="sunset"
+                  />
+                  {dateTimeConverter(
+                    currentWeather.sys.sunset,
+                    currentWeather.timezone,
+                    "time"
+                  )}
+                </SunriseSunset>
+              </BoxContainer>
+            ) : null}
           </ColumnBoxContainer>
         </ColumnContainer>
       </Container>

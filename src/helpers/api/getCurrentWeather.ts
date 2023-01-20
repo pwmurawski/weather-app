@@ -1,5 +1,5 @@
-import { CurrentWeatherSchema } from "../types/CurrentWeatherTypes";
-import { apiOpenWeatherMap } from "./api/apiOpenWeatherMap";
+import { CurrentWeatherSchema } from "../../types/CurrentWeatherTypes";
+import { apiOpenWeatherMap } from "./apiOpenWeatherMap";
 
 export const getCurrentWeather = async (
   searchValue: string,

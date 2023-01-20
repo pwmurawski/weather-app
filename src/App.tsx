@@ -14,8 +14,8 @@ import currentWeatherIcon from "./assets/weather-app.png";
 import forecastWeatherIcon from "./assets/weather-forecast.png";
 import { GoToLocalisationBtn } from "./components/GoToLocalisationBtn/GoToLocalisationBtn";
 import { useWeather } from "./hooks/useWeather";
-import { getForecastWeather } from "./helpers/getForecastWeather";
-import { getCurrentWeather } from "./helpers/getCurrentWeather";
+import { getForecastWeather } from "./helpers/api/getForecastWeather";
+import { getCurrentWeather } from "./helpers/api/getCurrentWeather";
 import { ForecastWeatherInfoMap } from "./components/ForecastWeatherInfo/ForecastWeatherInfoMap/ForecastWeatherInfoMap";
 
 export function App() {
